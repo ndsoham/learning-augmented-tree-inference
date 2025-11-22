@@ -17,7 +17,7 @@ positional arguments:<br>
 -  opt_tree:    tree render file
 -  opt_mat:     noise corrected matrix file
 
-_Note_: `sample-data/` contains example input genotype matrices for $n=20$ and $n=50$ cells. `sample-oracles` contains oracles used for inference for the sample data. The following commands can be used to test the implementation:
+_Note_: `sample-data/` contains example input genotype matrices for $n=20$ and $n=50$ cells. `sample-oracles/` contains oracles used for inference for the sample data. The following commands can be used to test the implementation:
 
 - `python run.py 20 20 0.01 0.05 test-n_20.png test-n_20.tsv`
 - `python run.py 50 500 0.0001 0.2 test-n_50.png test-n_500.tsv`
