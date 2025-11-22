@@ -12,11 +12,12 @@ parser.add_argument("n", help="cell count")
 parser.add_argument("m", help="mutation count")
 parser.add_argument("fp", help="false positive rate")
 parser.add_argument("fn", help="false negative rate")
-parser.add_argument("opt", help="tree render file")
+parser.add_argument("opt_tree", help="tree render file")
+parser.add_argument("opt_mat", help="noise corrected matrix file")
 
 args = parser.parse_args()
 
-n_i=int(args.n); m_i=int(args.m); fp_i=float(args.fp); fn_i=float(args.fn); output_name=args.opt
+n_i=int(args.n); m_i=int(args.m); fp_i=float(args.fp); fn_i=float(args.fn)
 
 geno_fp = f"sample-data/simNo_{1}-n_{n_i}-m_{m_i}-fp_{fp_i}-fn_{fn_i}-na_0.SC.after_noise"
 
@@ -34,4 +35,5 @@ inf_newick = build_newick_string(root)+";"
 
 inferred_tree = Tree(inf_newick, format=9)
 inferred_tree.show()
-inferred_tree.render(f"output-trees/{output_name}")
+inferred_tree.render(f"output-trees/{args.opt_tree}")
+noisy_genotype.to_csv(f"output-matrices/{args.opt_mat}", sep="\t")

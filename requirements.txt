@@ -1,0 +1,7 @@
+# Python==Python 3.10.18
+ete3==3.1.3
+numpy==2.2.6
+pandas==2.3.2
+xgboost==3.0.5
+scistree2 @ https://github.com/yufengwudcs/ScisTree2?tab=readme-ov-file
+
